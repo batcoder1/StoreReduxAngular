@@ -1,0 +1,18 @@
+.lista {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.item {
+    flex-direction: row;
+}
+.box {
+  min-height: 200px;
+}
+.filter {
+    text-decoration: none;
+    font-size: 14px;
+    color: grey;
+    
+}

@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="lista">
+    <h1>LISTA COMPRA</h1>
+  <div class="item">
+    <input type="text" [(ngModel)]="tarea">
+    <button type="button" (click)="addItem(tarea)">+</button>
+  </div>
+  <div class="box">
+    <div class="item" *ngFor ="let item of items ">
+      <input type="checkbox" name="completed" [(ngModel)]="item.completed" (click)="complete(item)">{{item.text}}
+    </div>
+
+
+  </div>
+  <div class="item">
+    <a *ngIf="filter!==filters[0]" class="filter" href="#" (click)="changeFilter(0)">Todos</a>
+    <a *ngIf="filter!==filters[1]" class="filter" href="#" (click)="changeFilter(1)">Activos</a>
+    <a *ngIf="filter!==filters[2]" class="filter" href="#" (click)="changeFilter(2)">Completados</a>
+
+  </div>
+</div> 
+
