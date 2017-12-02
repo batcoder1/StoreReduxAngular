@@ -31,8 +31,8 @@ import { createStore } from 'redux'
 Una vez que conocemos, un poco la teoría, vamos a integrar esto en una aplicación Angular.
 
 ## Coding
-Vamos a hacer una pequeña aplicación de lista de compra, donde el store guarde los items a comprar y un check con su estado, también guardaremos la vista, que podrá ser “mostrar todos” o “mostrar completados”. 
-Podéis descargar el proyecto desde mi repo en github o seguir los pasos.
+Vamos a hacer una pequeña aplicación de lista de compra, donde el store guarde los items a comprar y un check con su estado, también guardaremos el filtro, que podrá ser: “Todos” , “Activos” o “ Completados”.
+ 
 Lo primero que vamos a hacer es generar un proyecto con angular-cli
 
 ng new mystore
@@ -95,7 +95,7 @@ export const items = (state = [], action) => {
 };
 ```
 
-Finalmente declaramos el reducer combinando estos dos reducer con “combineReducers” , funcion disponible en la libreria redux.
+Finalmente declaramos el reducer combinando estos dos reducer con “combineReducers” , función disponible en la libreria redux.
 export const reducer: Reducer<AppState> = combineReducers({ visibilityFilter, items });
 Esto es todo lo que tendriamos que hacer en nuestro fichero reduce.ts
 No olvidemos el fichero actions.ts, aqui es donde declaramos las acciones posibles.
@@ -149,7 +149,7 @@ complete(item: Item) {
 ```
 
 ## Filtros
-Para manejar los filtros, tenemos que hacer tres cosas.
+Para manejar los filtros, tenemos que hacer tres cosas:
 1.- Añadir los link para poder seleccionar un filtro u otro.
 2.- Añadir la funcion que llama al store y cambia el estado del filtro.
 3.- Filtrar la respuesta del store para que segun el filtro que seleccionemos rellene el array con los items que deben mostrarse.
