@@ -14,11 +14,13 @@ Flujo de datos unidireccional
 Basado en funciones puras y un flujo de acciones.
 
 La unica forma de cambiar un estado es a traves de la emision de una accion. Para realizar esto, necesitamos los reductores.
-Reductores
+
+## Reductores
 Los reductores son funciones puras que deciden como cambian el estado en función de la acción de entrada. Cogen el estado anterior y una acción, y devuelve el siguiente estado.
-Es muy importante que el reductor se mantenga puro. Nunca puedes hacer que tu reductor mute sus argumentos, realice efectos secundarios (llamadas a servicios, APIS…) y realice llamadas a funciones no puras.
-El reductor al ser una funcion puera, siempre devolverá el mismo estado para los mismo argumentos de entrada, sin sorpresas.
-Store
+Es muy importante que el reductor se mantenga puro. Nunca puedes hacer que tu reductor mute sus argumentos, realice efectos secundarios (llamadas a servicios, APIS…), ni realizar llamadas a funciones no puras.
+El reductor al ser una función pura, siempre devolverá el mismo estado para los mismo argumentos de entrada, sin sorpresas.
+
+## Store
 Es el objeto que une las acciones y los reductores. El store debe mantener el estado de la aplicación, también debe permitir conocer el estado actual, para ello dispone del método getstate(). El estado únicamente se puede actualizar mediante la llamada al método dispatch(action). Por otro lado, para registrar a los oyentes hay que usar método subcribe(listener). 
 ```
 import { createStore } from 'redux'
