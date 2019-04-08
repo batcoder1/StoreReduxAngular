@@ -14,9 +14,10 @@
 
   </div>
   <div class="item">
-    <a *ngIf="filter!==filters[0]" class="filter" href="#" (click)="changeFilter(0)">Todos</a>
-    <a *ngIf="filter!==filters[1]" class="filter" href="#" (click)="changeFilter(1)">Activos</a>
-    <a *ngIf="filter!==filters[2]" class="filter" href="#" (click)="changeFilter(2)">Completados</a>
+
+    <button *ngIf="filter!==filters[0]" class="filter" href="#" (click)="changeFilter(0)">Todos</button>
+    <button class="btn btn-primary" *ngIf="filter!==filters[1]" class="filter" href="#" (click)="changeFilter(1)">Activos</button>
+      <button class="btn btn-primary" *ngIf="filter!==filters[2]" class="filter" href="#" (click)="changeFilter(2)">Completados</button>
 
   </div>
 </div> 
